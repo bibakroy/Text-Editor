@@ -1,29 +1,41 @@
-.rdw-editor-wrapper {
-  height: 300px;
-  margin-top: 0;
+.tiptap {
+  outline: none;
+  min-height: 100%;
+  /* Keep the first/last paragraph margins inside, so short content
+     doesn't overflow the editor box and show a scrollbar. */
+  display: flow-root;
 }
 
-.rdw-editor-wrapper .rdw-editor-toolbar {
-  background-color: #45b8ac;
-  border-radius: 10px;
-  height: 90px;
+.tiptap p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  color: #999;
+  pointer-events: none;
 }
 
-.rdw-wrapper-1281 {
-  display: flex;
-  justify-content: space-between;
+.tiptap blockquote {
+  margin: 0 0 0 4px;
+  padding-left: 12px;
+  border-left: 4px solid #ccc;
 }
 
-.rdw-editor-main {
-  background-color: ivory;
+.tiptap pre {
+  padding: 8px 12px;
   border-radius: 5px;
-  padding-left: 7px;
+  background: #f1f1f1;
+  white-space: pre-wrap;
 }
 
-/* .rdw-embedded-wrapper {
-  visibility: hidden;
+.tiptap code {
+  font-family: monospace;
 }
 
-.rdw-image-wrapper {
-  visibility: hidden;
-} */
+.tiptap a {
+  color: #1a73e8;
+}
+
+.tiptap img {
+  max-width: 100%;
+  height: auto;
+}
